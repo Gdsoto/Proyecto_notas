@@ -1,6 +1,11 @@
-from conexion import cursor, database
+import database.conexion as conexion
 import datetime
 import hashlib
+
+#acceder al arreglo con la conexion
+connect = conexion.conectar()
+database = connect[0]
+cursor = connect[1]
 
 #Creacion de clase Usuario
 class Usuario:
