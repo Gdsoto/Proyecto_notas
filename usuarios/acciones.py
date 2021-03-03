@@ -30,3 +30,14 @@ class Acciones:
 
         email = input("Cual es tu email?\n")
         password = input("escribe la contraseña\n")
+
+        try:
+            usuario = modelo.Usuario('', '', email, password)
+            login = usuario.identificar()
+
+            if email == login[3]:
+                print(f"Bienvenido {login[1]} te has registrado el {login[5]}\n")
+        except Exception as e:
+            print(type(e))   
+            print(type(e).__name__)   
+            print("Login incorrecto")
